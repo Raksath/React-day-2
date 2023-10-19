@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "start",
-    // Center the icon and text vertically
   },
   icon: {
     // marginRight: theme.spacing(1), // Adjust the spacing as needed
@@ -36,264 +35,258 @@ const useStyles = makeStyles((theme) => ({
     background: theme.palette.primary.dark,
     color: "white",
     borderRadius: "0.7rem",
-    transition: "background-color 0.3s", // Add a smooth transition effect
-    "&:hover": {
-      backgroundColor: theme.palette.primary.main, // Change color on hover
-    },
-    "&:active": {
-      backgroundColor: theme.palette.primary.main, // Change color on click/active
-    },
+    width: "90%",
+    border: "none",
+    outline: "none",
+    padding: "0.7rem",
+    // marginBottom: "1rem",
   },
 }));
 
 function App() {
-  const theme = useTheme();
+  const theme = createTheme();
   const classes = useStyles(theme);
 
   return (
-    <div className="App">
-      <Grid
-        container
-        spacing={2}
-        style={{
-          maxWidth: "800px",
-        }}
-      >
-        <Grid item xs={12} sm={6} md={4}>
-          <Card padding={1} sx={{ padding: "1rem", borderRadius: "0.8rem" }}>
-            <Typography
-              variant="body2"
-              color="textSecondary"
-              style={{
-                padding: "0",
-              }}
-            >
-              FREE
-            </Typography>
-            {/* <CardHeader
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Grid
+          container
+          spacing={2}
+          style={{
+            maxWidth: "750px",
+          }}
+        >
+          <Grid item xs={12} sm={6} md={4}>
+            <Card padding={1} sx={{ padding: "1rem", borderRadius: "0.8rem" }}>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+                style={{
+                  padding: "0",
+                }}
+              >
+                FREE
+              </Typography>
+              {/* <CardHeader
               title="$0/ month"
               style={{
                 marginTop: "0",
                 paddingTop: "0",
               }}
             ></CardHeader> */}
-            <Typography variant="h5">$0/ month</Typography>
-            <Divider></Divider>
-            <CardContent>
-              <Typography variant="body2" align="left">
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />
-                Single User
-              </Typography>
-              <Typography variant="body2" align="left">
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />
-                50GB Storage
-              </Typography>
-              <Typography variant="body2" align="left">
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />{" "}
-                Unlimited Public Projects
-              </Typography>
-              <Typography variant="body2" align="left">
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />
-                Community Access
-              </Typography>
-              <Typography
-                variant="body2"
-                align="left"
-                color="#CDCDCD"
-                sx={{ alignItems: "center", display: "flex" }}
-              >
-                <CloseIcon fontSize="0.8rem" className={classes.icon} />
-                Unlimited Private Projects
-              </Typography>
+              <Typography variant="h5">$0/ month</Typography>
+              <Divider></Divider>
+              <CardContent>
+                <Typography variant="body2" align="left">
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />
+                  Single User
+                </Typography>
+                <Typography variant="body2" align="left">
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />
+                  50GB Storage
+                </Typography>
+                <Typography variant="body2" align="left">
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />{" "}
+                  Unlimited Public Projects
+                </Typography>
+                <Typography variant="body2" align="left">
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />
+                  Community Access
+                </Typography>
+                <Typography
+                  variant="body2"
+                  align="left"
+                  color="#CDCDCD"
+                  sx={{ alignItems: "center", display: "flex" }}
+                >
+                  <CloseIcon fontSize="0.8rem" className={classes.icon} />
+                  Unlimited Private Projects
+                </Typography>
 
-              <Typography
-                variant="subtitle2"
-                align="left"
-                color="#CDCDCD"
-                sx={{ alignItems: "center", display: "flex" }}
-              >
-                <CloseIcon fontSize="0.8rem" className={classes.icon} />
-                Dedicated Phone Support
-              </Typography>
+                <Typography
+                  variant="subtitle2"
+                  align="left"
+                  color="#CDCDCD"
+                  sx={{ alignItems: "center", display: "flex" }}
+                >
+                  <CloseIcon fontSize="0.8rem" className={classes.icon} />
+                  Dedicated Phone Support
+                </Typography>
+                <Typography
+                  variant="body2"
+                  align="left"
+                  color="#CDCDCD"
+                  sx={{ alignItems: "center", display: "flex" }}
+                >
+                  <CloseIcon fontSize="0.8rem" className={classes.icon} />
+                  Free subdomin
+                </Typography>
+                <Typography
+                  variant="body2"
+                  align="left"
+                  color="#CDCDCD"
+                  sx={{ alignItems: "center", display: "flex" }}
+                >
+                  <CloseIcon fontSize="0.8rem" className={classes.icon} />
+                  Monthly Status Reports
+                </Typography>
+              </CardContent>
+              <button className={classes.button}>BUY</button>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Card padding={1} sx={{ padding: "1rem", borderRadius: "0.8rem" }}>
               <Typography
                 variant="body2"
-                align="left"
-                color="#CDCDCD"
-                sx={{ alignItems: "center", display: "flex" }}
+                color="textSecondary"
+                style={{
+                  padding: "0",
+                }}
               >
-                <CloseIcon fontSize="0.8rem" className={classes.icon} />
-                Free subdomin
+                PLUS
               </Typography>
-              <Typography
-                variant="body2"
-                align="left"
-                color="#CDCDCD"
-                sx={{ alignItems: "center", display: "flex" }}
-              >
-                <CloseIcon fontSize="0.8rem" className={classes.icon} />
-                Monthly Status Reports
-              </Typography>
-            </CardContent>
-            <Button sx={{ width: "100%" }} className={classes.button}>
-              BUY
-            </Button>
-          </Card>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <Card padding={1} sx={{ padding: "1rem", borderRadius: "0.8rem" }}>
-            <Typography
-              variant="body2"
-              color="textSecondary"
-              style={{
-                padding: "0",
-              }}
-            >
-              PLUS
-            </Typography>
-            {/* <CardHeader
+              {/* <CardHeader
               title="$0/ month"
               style={{
                 marginTop: "0",
                 paddingTop: "0",
               }}
             ></CardHeader> */}
-            <Typography variant="h5">$9/ month</Typography>
-            <Divider></Divider>
-            <CardContent>
-              <Typography variant="body2" align="left">
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />5 User
-              </Typography>
-              <Typography variant="body2" align="left">
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />
-                50GB Storage
-              </Typography>
-              <Typography variant="body2" align="left">
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />{" "}
-                Unlimited Public Projects
-              </Typography>
-              <Typography variant="body2" align="left">
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />
-                Community Access
-              </Typography>
+              <Typography variant="h5">$9/ month</Typography>
+              <Divider></Divider>
+              <CardContent>
+                <Typography variant="body2" align="left">
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />5 User
+                </Typography>
+                <Typography variant="body2" align="left">
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />
+                  50GB Storage
+                </Typography>
+                <Typography variant="body2" align="left">
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />{" "}
+                  Unlimited Public Projects
+                </Typography>
+                <Typography variant="body2" align="left">
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />
+                  Community Access
+                </Typography>
+                <Typography
+                  variant="body2"
+                  align="left"
+                  color="textSecondary"
+                  sx={{ alignItems: "center", display: "flex" }}
+                >
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />
+                  Unlimited Private Projects
+                </Typography>
+                <Typography
+                  variant="body2"
+                  align="left"
+                  color="textSecondary"
+                  sx={{ alignItems: "center", display: "flex" }}
+                >
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />
+                  Dedicated Phone Support
+                </Typography>
+                <Typography
+                  variant="body2"
+                  align="left"
+                  color="textSecondary"
+                  sx={{ alignItems: "center", display: "flex" }}
+                >
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />
+                  Free Subdomain
+                </Typography>
+                <Typography
+                  variant="body2"
+                  align="left"
+                  color="#CDCDCD"
+                  sx={{ alignItems: "center", display: "flex" }}
+                >
+                  <CloseIcon fontSize="0.8rem" className={classes.icon} />
+                  Monthly Status Reports
+                </Typography>
+              </CardContent>
+              <button className={classes.button}>BUY</button>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Card padding={1} sx={{ padding: "1rem", borderRadius: "0.8rem" }}>
               <Typography
                 variant="body2"
-                align="left"
                 color="textSecondary"
-                sx={{ alignItems: "center", display: "flex" }}
+                style={{
+                  padding: "0",
+                }}
               >
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />
-                Unlimited Private Projects
+                PRO
               </Typography>
-              <Typography
-                variant="body2"
-                align="left"
-                color="textSecondary"
-                sx={{ alignItems: "center", display: "flex" }}
-              >
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />
-                Dedicated Phone Support
-              </Typography>
-              <Typography
-                variant="body2"
-                align="left"
-                color="textSecondary"
-                sx={{ alignItems: "center", display: "flex" }}
-              >
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />
-                Free Subdomain
-              </Typography>
-              <Typography
-                variant="body2"
-                align="left"
-                color="#CDCDCD"
-                sx={{ alignItems: "center", display: "flex" }}
-              >
-                <CloseIcon fontSize="0.8rem" className={classes.icon} />
-                Monthly Status Reports
-              </Typography>
-            </CardContent>
-            <Button sx={{ width: "100%" }} className={classes.button}>
-              BUY
-            </Button>
-          </Card>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <Card padding={1} sx={{ padding: "1rem", borderRadius: "0.8rem" }}>
-            <Typography
-              variant="body2"
-              color="textSecondary"
-              style={{
-                padding: "0",
-              }}
-            >
-              PRO
-            </Typography>
-            {/* <CardHeader
+              {/* <CardHeader
               title="$0/ month"
               style={{
                 marginTop: "0",
                 paddingTop: "0",
               }}
             ></CardHeader> */}
-            <Typography variant="h5">$180/ month</Typography>
-            <Divider></Divider>
-            <CardContent>
-              <Typography variant="body2" align="left">
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />
-                Single User
-              </Typography>
-              <Typography variant="body2" align="left">
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />
-                50GB Storage
-              </Typography>
-              <Typography variant="body2" align="left">
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />{" "}
-                Unlimited Public Projects
-              </Typography>
-              <Typography variant="body2" align="left">
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />
-                Community Access
-              </Typography>
-              <Typography
-                variant="body2"
-                align="left"
-                sx={{ alignItems: "center", display: "flex" }}
-              >
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />
-                Unlimited Private Projects
-              </Typography>
-              <Typography
-                variant="body2"
-                align="left"
-                sx={{ alignItems: "center", display: "flex" }}
-              >
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />
-                Dedicated Phone Support
-              </Typography>
-              <Typography
-                variant="body2"
-                align="left"
-                sx={{ alignItems: "center", display: "flex" }}
-              >
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />
-                Free Subdomain
-              </Typography>
-              <Typography
-                variant="body2"
-                align="left"
-                sx={{ alignItems: "center", display: "flex" }}
-              >
-                <DoneIcon fontSize="0.8rem" className={classes.icon} />
-                Monthly Status Reports
-              </Typography>
-            </CardContent>
-            <Button sx={{ width: "100%" }} className={classes.button}>
-              BUY
-            </Button>
-          </Card>
+              <Typography variant="h5">$180/ month</Typography>
+              <Divider></Divider>
+              <CardContent>
+                <Typography variant="body2" align="left">
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />
+                  Single User
+                </Typography>
+                <Typography variant="body2" align="left">
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />
+                  50GB Storage
+                </Typography>
+                <Typography variant="body2" align="left">
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />{" "}
+                  Unlimited Public Projects
+                </Typography>
+                <Typography variant="body2" align="left">
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />
+                  Community Access
+                </Typography>
+                <Typography
+                  variant="body2"
+                  align="left"
+                  sx={{ alignItems: "center", display: "flex" }}
+                >
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />
+                  Unlimited Private Projects
+                </Typography>
+                <Typography
+                  variant="body2"
+                  align="left"
+                  sx={{ alignItems: "center", display: "flex" }}
+                >
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />
+                  Dedicated Phone Support
+                </Typography>
+                <Typography
+                  variant="body2"
+                  align="left"
+                  sx={{ alignItems: "center", display: "flex" }}
+                >
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />
+                  Free Subdomain
+                </Typography>
+                <Typography
+                  variant="body2"
+                  align="left"
+                  sx={{ alignItems: "center", display: "flex" }}
+                >
+                  <DoneIcon fontSize="0.8rem" className={classes.icon} />
+                  Monthly Status Reports
+                </Typography>
+              </CardContent>
+              <button className={classes.button}>BUY</button>
+            </Card>
+          </Grid>
         </Grid>
-      </Grid>
-    </div>
+      </div>
+    </ThemeProvider>
   );
 }
 
